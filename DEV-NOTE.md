@@ -172,3 +172,6 @@ image = ImageSerializer()
 ```
 - http://www.django-rest-framework.org/api-guide/relations/#nested-relationships
 
+## Hidden Model Fields in Django
+- Related Objects Reference (https://docs.djangoproject.com/en/1.11/ref/models/relations/)
+- What is `related_name` used for in Django? (https://stackoverflow.com/questions/2642613/what-is-related-name-used-for-in-django/2642645#2642645)
