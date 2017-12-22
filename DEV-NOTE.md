@@ -60,7 +60,7 @@
 ```sh
 pipenv --three 	        // create a bubble with python version 3
 pipenv install django   // install django package in this bubble 
-pipenv shell		    // go into a bubble 
+pipenv shell            // go into a bubble 
 exit 	                // exit bubble  
 ```
 ## Parts of Django
@@ -155,3 +155,12 @@ pipenv install djangorestframework
 ## Django Rest Framework APIView
 - http://www.django-rest-framework.org/api-guide/views/
 
+
+### 12/22/2017
+
+## Django URL Dispatcher
+- Let Django know the requested urls
+```sh
+url(r'^images/', include('sodagram.images.urls', namespace='images')) 
+```
+- https://docs.djangoproject.com/en/1.11/topics/http/urls/
