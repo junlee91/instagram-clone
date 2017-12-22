@@ -139,3 +139,7 @@ To call the objects related to the owner all we have to do is call ‘modelName_
 followers = models.ManyToManyField(‘self’)
 following = models.ManyToManyField(‘self’)
 ```
+
+## RESTful API Designing guidelines
+- https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9 
+
