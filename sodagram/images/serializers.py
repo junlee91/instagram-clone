@@ -8,7 +8,9 @@ class ImageSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class Commenterializer(serializers.ModelSerializer):
+class CommentSerializer(serializers.ModelSerializer):
+
+    image = ImageSerializer()
 
     class Meta:
         model = models.Comment
@@ -16,6 +18,8 @@ class Commenterializer(serializers.ModelSerializer):
 
 
 class LikeSerializer(serializers.ModelSerializer):
+
+    image = ImageSerializer()
 
     class Meta:
         model = models.Like

@@ -164,3 +164,11 @@ pipenv install djangorestframework
 url(r'^images/', include('sodagram.images.urls', namespace='images')) 
 ```
 - https://docs.djangoproject.com/en/1.11/topics/http/urls/
+
+## Nested Relationships Serializers
+- Instead of getting the foreign key, get Serializer for image
+```sh
+image = ImageSerializer()
+```
+- http://www.django-rest-framework.org/api-guide/relations/#nested-relationships
+
