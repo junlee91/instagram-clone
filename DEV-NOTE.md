@@ -143,3 +143,10 @@ following = models.ManyToManyField(‘self’)
 ## RESTful API Designing guidelines
 - https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9 
 
+## Django Rest Framework
+- http://www.django-rest-framework.org/
+```sh
+pipenv install djangorestframework
+```
+- Serializer converts Python Object to JSON (and other way around)
+- Bridge between Python and JavaScript
