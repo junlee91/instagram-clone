@@ -1,4 +1,4 @@
-# Developmend Note
+# Development Note
 
 ### 12/18/2017 
 
@@ -18,43 +18,43 @@
 - Postgres
 
 ## Django 
-LINK: https://www.djangoproject.com/start/overview/
-Framework 
-Not a programming language
-Very fast for developers 
-Secure
-Handy
-Used by (Instagram, Pinterest, Spority, NASA)
+- LINK: https://www.djangoproject.com/start/overview/
+- Framework 
+- Not a programming language
+- Very fast for developers 
+- Secure
+- Handy
+- Used by (Instagram, Pinterest, Spority, NASA)
 
 ## Framework vs Library  
-LINK: https://www.programcreek.com/2011/09/what-is-the-difference-between-a-java-library-and-a-framework/
-A library is a tool
-A framework is a way of life
-A library is just functions you can call
-A framework calls your code
-You call the library
-The framework calls you 
+- LINK: https://www.programcreek.com/2011/09/what-is-the-difference-between-a-java-library-and-a-framework/
+- A library is a tool
+- A framework is a way of life
+- A library is just functions you can call
+- A framework calls your code
+- You call the library
+- The framework calls you 
 
 ## Django comes with
-ORM (talk to the database)
-Admin Panel
-User Authentication
-URL Dispatcher
-Template Engine 
+- ORM (talk to the database)
+- Admin Panel
+- User Authentication
+- URL Dispatcher
+- Template Engine 
 
 ## Virtual Environments
-Imagine a bubble
-What happens in the bubble stays in the bubble
-You can have as many bubbles as you want
+- Imagine a bubble
+- What happens in the bubble stays in the bubble
+- You can have as many bubbles as you want
 
 ## Why Virtual Environment? 
-Because global dependencies are not okay
-Many times you will need different dependency versions
+- Because global dependencies are not okay
+- Many times you will need different dependency versions
 
 ## How?
-Virtualenv
-Virtualenvwrapper
-Pipenv
+- Virtualenv
+- Virtualenvwrapper
+- Pipenv
 
 ## Creating a Virtual Environment 
 ```sh
@@ -67,23 +67,23 @@ exit 	                // exit bubble
 Settings, Urls, and Apps
 
 ### Settings
-Change the default behavior of Django
-Install more modules 
-Remove default ones
-Django will look at this file whenever it starts
+- Change the default behavior of Django
+- Install more modules 
+- Remove default ones
+- Django will look at this file whenever it starts
 ### Urls
-The Django project is gonna be open to the internet
-URLS are how you talk to the Django project and make him do things
-When Django matches an URL it will execute a view function.
+- The Django project is gonna be open to the internet
+- URLS are how you talk to the Django project and make him do things
+- When Django matches an URL it will execute a view function.
 
 ### Apps
-Apps are what the applications is made of
-Apps have a defined scope and they responsibilities are very precise
-A Django project can have as many apps as you want
+- Apps are what the applications is made of
+- Apps have a defined scope and they responsibilities are very precise
+- A Django project can have as many apps as you want
 
 ## Creating Django Project
-Production-ready-size
-Cookiecutter Django (https://github.com/pydanny/cookiecutter-django)
+- Production-ready-size
+- Cookiecutter Django (https://github.com/pydanny/cookiecutter-django)
 
 ```sh
 pipenv install cookiecutter
@@ -101,10 +101,10 @@ pipenv install -r requirements/local.tx
 ### 12/21/2017
 
 ## Production Settings and Local Settings
-Production Settings:
+- Production Settings:
 Settings that are gonna be loaded on the live server
 
-Local Settings:
+- Local Settings:
 Settings that are gonna be loaded on the local server
 
 
@@ -112,22 +112,21 @@ Settings that are gonna be loaded on the local server
 CREATE DATABASE databasename;
 
 ## Migrating
-A migration is a process to change the shape of the database models
-When we add, remove or update DB columns we have to migrate
+- A migration is a process to change the shape of the database models
+- When we add, remove or update DB columns we have to migrate
 
 ```sh
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-Django Model Field: https://docs.djangoproject.com/en/1.11/ref/models/fields/ 
-Django Model Documentation: https://docs.djangoproject.com/en/1.11/topics/db/models/ 
+- Django Model Field: https://docs.djangoproject.com/en/1.11/ref/models/fields/ 
+- Django Model Documentation: https://docs.djangoproject.com/en/1.11/topics/db/models/ 
 
 
 ## Abstract base classes
-Abstract base classes are useful when you want to put some common information into a number of other models.
-
-https://docs.djangoproject.com/en/1.11/topics/db/models/#abstract-base-classes 
+- Abstract base classes are useful when you want to put some common information into a number of other models.
+- https://docs.djangoproject.com/en/1.11/topics/db/models/#abstract-base-classes 
 
 
 ## Model Relationships
