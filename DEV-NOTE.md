@@ -16,6 +16,7 @@
 - Pip
 - Pipenv
 - Postgres
+- Django 1.11
 
 ## Django 
 - LINK: https://www.djangoproject.com/start/overview/
@@ -191,4 +192,10 @@ image = ImageSerializer()
 - [Making Queries on Django](https://docs.djangoproject.com/en/1.11/topics/db/queries/)
 - [QuerySet Reference](https://docs.djangoproject.com/en/1.11/ref/models/querysets/)
 
+## Capturing arguments on Django URL's
+```sh
+regex=r'(?P<image_id>[0-9]+)/like/'
+```
+- [Testing Regular Expression](https://regex101.com/)
 
+## 
