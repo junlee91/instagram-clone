@@ -8,13 +8,18 @@ urlpatterns = [
         name='feed'
     ),
     url(
-        regex=r'(?P<image_id>[0-9]+)/like/',
+        regex=r'^(?P<image_id>[0-9]+)/like/$',
         view=views.LikeImage.as_view(),
         name='like_image'
     ),
     url(
-        regex=r'(?P<image_id>[0-9]+)/comment/',
+        regex=r'^(?P<image_id>[0-9]+)/comment/$',
         view=views.CommentOnImage.as_view(),
         name='comment_image'
+    ),
+    url(
+        regex=r'^comments/(?P<comment_id>[0-9]+)/$',
+        view=views.Comment.as_view(),
+        name='comment'
     ),
 ]
