@@ -173,5 +173,22 @@ image = ImageSerializer()
 - http://www.django-rest-framework.org/api-guide/relations/#nested-relationships
 
 ## Hidden Model Fields in Django
-- Related Objects Reference (https://docs.djangoproject.com/en/1.11/ref/models/relations/)
-- What is `related_name` used for in Django? (https://stackoverflow.com/questions/2642613/what-is-related-name-used-for-in-django/2642645#2642645)
+- [Related Objects Reference](https://docs.djangoproject.com/en/1.11/ref/models/relations/)
+- [What is `related_name` used for in Django?](https://stackoverflow.com/questions/2642613/what-is-related-name-used-for-in-django/2642645#2642645)
+
+## The Request Object in Django
+- Django uses request and response objects to pass state through the system.
+- When a page is requested, Django creates an HttpRequest object that contains metadata about the request.
+- Then Django loads the appropriate view, passing the HttpRequest as the first argument to the view function. 
+- Each view is responsible for returning an HttpResponse object.
+- Mostly used attributes (POST, USER)
+- [Request and Response Objects](https://docs.djangoproject.com/en/1.11/ref/request-response/)
+- [Request Attributes set by Middleware (user)](https://docs.djangoproject.com/en/1.11/ref/request-response/#attributes-set-by-middleware)
+- [Django Middleware Documentation](https://docs.djangoproject.com/en/1.11/topics/http/middleware/)
+- [Understanding Django Middlewares](http://agiliq.com/blog/2015/07/understanding-django-middlewares/)
+
+## Making Queries
+- [Making Queries on Django](https://docs.djangoproject.com/en/1.11/topics/db/queries/)
+- [QuerySet Reference](https://docs.djangoproject.com/en/1.11/ref/models/querysets/)
+
+

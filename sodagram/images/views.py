@@ -7,7 +7,7 @@ from . import models, serializers
 
 class ListAllImages(APIView):
 
-    def get(self, response, format=None):
+    def get(self, request, format=None):
 
         all_images = models.Image.objects.all()
 
@@ -18,7 +18,9 @@ class ListAllImages(APIView):
 
 class ListAllComments(APIView):
 
-    def get(self, response, format=None):
+    def get(self, request, format=None):
+
+        user_id = request.user.id
 
         all_comments = models.Comment.objects.all()
 
@@ -29,7 +31,7 @@ class ListAllComments(APIView):
 
 class ListAllLikes(APIView):
 
-    def get(self, response, format=None):
+    def get(self, request, format=None):
 
         all_likes = models.Like.objects.all()
 
