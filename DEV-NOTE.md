@@ -193,4 +193,10 @@ regex=r'(?P<image_id>[0-9]+)/like/'
 ```
 - [Testing Regular Expression](https://regex101.com/)
 
-### 12/23/17 
+### 12/23/17
+
+## [Limiting QuerySets](https://docs.djangoproject.com/en/1.11/topics/db/queries/#limiting-querysets) 
+```sh
+>>> Entry.objects.all()[:5]         // returns first five objects
+``` 
+
