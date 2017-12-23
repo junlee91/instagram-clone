@@ -19,7 +19,7 @@
 - Django 1.11
 
 ## Django 
-- LINK: https://www.djangoproject.com/start/overview/
+- [Overview](https://www.djangoproject.com/start/overview/)
 - Framework 
 - Not a programming language
 - Very fast for developers 
@@ -27,8 +27,7 @@
 - Handy
 - Used by (Instagram, Pinterest, Spority, NASA)
 
-## Framework vs Library  
-- LINK: https://www.programcreek.com/2011/09/what-is-the-difference-between-a-java-library-and-a-framework/
+## [Framework vs Library](https://www.programcreek.com/2011/09/what-is-the-difference-between-a-java-library-and-a-framework/)  
 - A library is a tool
 - A framework is a way of life
 - A library is just functions you can call
@@ -84,7 +83,7 @@ Settings, Urls, and Apps
 
 ## Creating Django Project
 - Production-ready-size
-- Cookiecutter Django (https://github.com/pydanny/cookiecutter-django)
+- [Cookiecutter Django](https://github.com/pydanny/cookiecutter-django)
 
 ```sh
 pipenv install cookiecutter
@@ -125,9 +124,8 @@ python manage.py migrate
 - Django Model Documentation: https://docs.djangoproject.com/en/1.11/topics/db/models/ 
 
 
-## Abstract base classes
-- Abstract base classes are useful when you want to put some common information into a number of other models.
-- https://docs.djangoproject.com/en/1.11/topics/db/models/#abstract-base-classes 
+## [Abstract base classes](https://docs.djangoproject.com/en/1.11/topics/db/models/#abstract-base-classes)
+- Abstract base classes are useful when you want to put some common information into a number of other models. 
 
 
 ## Model Relationships
@@ -141,11 +139,9 @@ followers = models.ManyToManyField(‘self’)
 following = models.ManyToManyField(‘self’)
 ```
 
-## RESTful API Designing guidelines
-- https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9 
+## [RESTful API Designing guidelines](https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9 )
 
-## Django Rest Framework
-- http://www.django-rest-framework.org/
+## [Django Rest Framework](http://www.django-rest-framework.org/)
 ```sh
 pipenv install djangorestframework
 ```
@@ -153,8 +149,7 @@ pipenv install djangorestframework
 - Bridge between Python and JavaScript
 
 
-## Django Rest Framework APIView
-- http://www.django-rest-framework.org/api-guide/views/
+## [Django Rest Framework APIView](http://www.django-rest-framework.org/api-guide/views/)
 
 
 ### 12/22/2017
@@ -198,4 +193,4 @@ regex=r'(?P<image_id>[0-9]+)/like/'
 ```
 - [Testing Regular Expression](https://regex101.com/)
 
-## 
+### 12/23/17 
