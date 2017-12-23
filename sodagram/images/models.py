@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.encoding import python_2_unicode_compatible
 from sodagram.users import models as user_models
 
 # Create your models here.
@@ -10,6 +11,7 @@ class TimeStampedModel(models.Model):
     class Meta:
         abstract = True
 
+@python_2_unicode_compatible
 class Image(TimeStampedModel):
 
     """ Iamge Model """
@@ -17,12 +19,15 @@ class Image(TimeStampedModel):
     file = models.ImageField()
     location = models.CharField(max_length=140)
     caption = models.TextField()
-    creator = models.ForeignKey(user_models.User, null=True)
+    creator = models.ForeignKey(user_models.User, null=True, related_name='images')
 
     def __str__(self):
         return '{} - {}'.format(self.location, self.caption)
 
+    class Meta:
+        ordering = ['-created_at']
 
+@python_2_unicode_compatible
 class Comment(TimeStampedModel):
 
     """ Comment Model """
@@ -34,6 +39,7 @@ class Comment(TimeStampedModel):
     def __str__(self):
         return self.message
 
+@python_2_unicode_compatible
 class Like(TimeStampedModel):
 
     """ Like Model """
