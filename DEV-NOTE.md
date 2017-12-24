@@ -199,4 +199,35 @@ regex=r'(?P<image_id>[0-9]+)/like/'
 ```sh
 >>> Entry.objects.all()[:5]         // returns first five objects
 ``` 
+## Getting User Profile
+- Fields to be shown when clicking profile
+- username
+- name
+- bio
+- website
+- post count
+- followers count
+- following count
+- images
+- Define UserProfileImageSerializer in images.serializers
+```sh
+class UserProfileImageSerializer(serializers.ModelSerializer):
 
+    class Meta:
+        model = models.Image
+        fields =(
+            'id',
+            'file',
+            'comment_count',
+            'like_count'
+        )
+```
+- Import UserProfileImageSerializer from images.serializers to user.serializer
+```sh
+from sodagram.images import serializers as images_serializers
+
+// and get images of this profile
+
+images = images_serializers.UserProfileImageSerializer(many=True)
+```    
+            
