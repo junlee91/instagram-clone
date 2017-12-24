@@ -120,8 +120,8 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-- Django Model Field: https://docs.djangoproject.com/en/1.11/ref/models/fields/ 
-- Django Model Documentation: https://docs.djangoproject.com/en/1.11/topics/db/models/ 
+- [Django Model Field](https://docs.djangoproject.com/en/1.11/ref/models/fields/) 
+- [Django Model Documentation](https://docs.djangoproject.com/en/1.11/topics/db/models/) 
 
 
 ## [Abstract base classes](https://docs.djangoproject.com/en/1.11/topics/db/models/#abstract-base-classes)
@@ -155,18 +155,16 @@ pipenv install djangorestframework
 ### 12/22/2017
 
 ## Django URL Dispatcher
-- Let Django know the requested urls
+- [Let Django know the requested urls](https://docs.djangoproject.com/en/1.11/topics/http/urls/)
 ```sh
 url(r'^images/', include('sodagram.images.urls', namespace='images')) 
 ```
-- https://docs.djangoproject.com/en/1.11/topics/http/urls/
 
 ## Nested Relationships Serializers
-- Instead of getting the foreign key, get Serializer for image
+- [Instead of getting the foreign key, get Serializer for image](http://www.django-rest-framework.org/api-guide/relations/#nested-relationships)
 ```sh
 image = ImageSerializer()
 ```
-- http://www.django-rest-framework.org/api-guide/relations/#nested-relationships
 
 ## Hidden Model Fields in Django
 - [Related Objects Reference](https://docs.djangoproject.com/en/1.11/ref/models/relations/)
