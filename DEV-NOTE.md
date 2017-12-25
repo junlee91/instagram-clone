@@ -229,3 +229,12 @@ from sodagram.images import serializers as images_serializers
 images = images_serializers.UserProfileImageSerializer(many=True)
 ```    
             
+### 12/24/17
+
+## Hashtag
+- [django-taggit](https://github.com/alex/django-taggit)
+- [Django Taggit Documentation](https://django-taggit.readthedocs.io/en/latest/)
+```sh
+pipenv install django-taggit
+python manage.py migrate
+```

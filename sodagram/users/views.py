@@ -60,7 +60,7 @@ class UserProfile(APIView):
         except models.User.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
-        serializer = serializers.UserProfileSerializer(found_user)
+        serializer = serializers.CountImageSerializer(found_user)
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 

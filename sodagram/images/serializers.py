@@ -3,7 +3,7 @@ from . import models
 from sodagram.users import models as user_model
 
 
-class UserProfileImageSerializer(serializers.ModelSerializer):
+class CountImageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Image
