@@ -58,7 +58,8 @@ LOCAL_APPS = [
     # custom users app
     'sodagram.users.apps.UsersConfig',
     # Your stuff: custom apps go here
-    'sodagram.images.apps.ImagesConfig',
+    'sodagram.images.apps.ImagesConfig',    # images app
+    'sodagram.notifications.apps.NotificationsConfig'   # notifications app
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
