@@ -15,6 +15,7 @@ urlpatterns = [
     # User management
     url(r'^users/', include('sodagram.users.urls', namespace='users')),
     url(r'^images/', include('sodagram.images.urls', namespace='images')),
+    url(r'^notifications/', include('sodagram.notifications.urls', namespace='notifications')),
     url(r'^accounts/', include('allauth.urls')),
 
     # Your stuff: custom urls includes go here
