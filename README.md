@@ -1,6 +1,4 @@
-# sodagram
-
-## Project started!!
+# sodagram (work-in-progress 👷🔧️👷‍♀️⛏)
 
 ### [Dev Note](https://github.com/junlee91/sodagram/blob/master/DEV-NOTE.md)
 
