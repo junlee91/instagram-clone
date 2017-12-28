@@ -238,3 +238,10 @@ images = images_serializers.UserProfileImageSerializer(many=True)
 pipenv install django-taggit
 python manage.py migrate
 ```
+
+### 12/28/17
+
+## Change password
+- [Check password documentation](https://docs.djangoproject.com/en/1.11/ref/contrib/auth/#django.contrib.auth.models.User.check_password)
+- ``check_password(raw_password)``
+- ``set_password(raw_password)``
