@@ -238,6 +238,11 @@ images = images_serializers.UserProfileImageSerializer(many=True)
 pipenv install django-taggit
 python manage.py migrate
 ```
+- [Django Taggit Rest Serializer](https://github.com/glemmaPaul/django-taggit-serializer)
+```sh
+pipenv install django-taggit-serializer
+```
+
 
 ### 12/28/17
 

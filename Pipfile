@@ -33,6 +33,7 @@ pytest-sugar = "==0.9.0"
 djangorestframework = "*"
 django-taggit = "*"
 djangorestframework-jwt = "*"
+django-taggit-serializer = "*"
 
 
 [dev-packages]
