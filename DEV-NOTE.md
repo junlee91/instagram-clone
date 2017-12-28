@@ -245,3 +245,37 @@ python manage.py migrate
 - [Check password documentation](https://docs.djangoproject.com/en/1.11/ref/contrib/auth/#django.contrib.auth.models.User.check_password)
 - ``check_password(raw_password)``
 - ``set_password(raw_password)``
+
+## JWT Token (JSON Web Token)
+- [Introduction to Json Web Tokens](https://jwt.io/introduction/)
+- [REST framework JWT Auth](http://getblimp.github.io/django-rest-framework-jwt/)
+- ``pipenv install djangorestframework-jwt``
+- Protection for our API
+```sh
+// include into base.py
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+}
+```
+```sh
+// include into urls.py
+from rest_framework_jwt.views import obtain_jwt_token
+#...
+
+urlpatterns = [
+    '',
+    # ...
+
+    url(r'^api-token-auth/', obtain_jwt_token),
+]
+```
+
+## [Postman](https://www.getpostman.com/)
+- API call using JSON Web Token
