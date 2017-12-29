@@ -291,3 +291,6 @@ urlpatterns = [
 ## Login : Signup 
 - [Django Rest Auth on Github](https://github.com/Tivix/django-rest-auth)
 - [Django Rest Auth Documentation](http://django-rest-auth.readthedocs.io/en/latest/)
+
+## Login with Facebook
+- [Django-allauth](http://django-allauth.readthedocs.io/en/latest/installation.html)
