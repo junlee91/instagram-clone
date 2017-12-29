@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3845d9fbf810a0e16bce3e429caa46e43b85174348dec233f84c9dc47878767a"
+            "sha256": "b6a9cd4c8787176eb5d01679a883e52c23df9756e0666e0763963279186b1a84"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -260,6 +260,12 @@
                 "sha256:5229da5b07ccb8d3e3e9ee098c0b7c03e20eba48634bc456697dd73d62c68b19"
             ],
             "version": "==4.8.0"
+        },
+        "django-rest-auth": {
+            "hashes": [
+                "sha256:cd7874131fb8022c4d7f3ca317485fc3d54c2c9fc06fec32901d4f5247c5f8c1"
+            ],
+            "version": "==0.9.2"
         },
         "django-taggit": {
             "hashes": [

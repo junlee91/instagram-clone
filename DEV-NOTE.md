@@ -284,3 +284,10 @@ urlpatterns = [
 
 ## [Postman](https://www.getpostman.com/)
 - API call using JSON Web Token
+
+
+### 12/29/17
+
+## Login : Signup 
+- [Django Rest Auth on Github](https://github.com/Tivix/django-rest-auth)
+- [Django Rest Auth Documentation](http://django-rest-auth.readthedocs.io/en/latest/)
