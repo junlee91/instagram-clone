@@ -27,25 +27,25 @@
 - [Package.json Documentation](https://docs.npmjs.com/files/package.json)
 - Commands
 ```sh
-yarn init
-touch index.js
-touch webpack.config.js
-yarn global add webpack
-yarn add babel babel-core babel-loader babel-preset-es2015 --dev
+> yarn init
+> touch index.js
+> touch webpack.config.js
+> yarn global add webpack
+> yarn add babel babel-core babel-loader babel-preset-es2015 --dev
 ```
 - webpack.config.js
 ```sh
 module.exports = {
-    entry: _where to find the files to be converted_
+    entry: *where to find the files to be converted*
     output: {
-        path: _output location_
-        filename: _output filename_
+        path: *output location*
+        filename: *output filename*
     },
     module:{
         rules: [
             {
-                test: _types of file_
-                loader: _how to transform_
+                test: *types of file*
+                loader: *how to transform*
                 options: {
                     presets: ["es2015"]
                 } 
@@ -54,7 +54,7 @@ module.exports = {
 
     },
     plugins:[
-        _what to do at the end_
+        *what to do at the end*
     ]
 };
 ```
