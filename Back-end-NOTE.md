@@ -18,7 +18,7 @@
 - Very fast for developers 
 - Secure
 - Handy
-- Used by (Instagram, Pinterest, Spority, NASA)
+- Used by (Instagram, Pinterest, Spotify, NASA)
 
 ## [Framework vs Library](https://www.programcreek.com/2011/09/what-is-the-difference-between-a-java-library-and-a-framework/)  
 - A library is a tool
