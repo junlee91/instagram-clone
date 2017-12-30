@@ -4,13 +4,6 @@
 
 ## Development Tools 
 - Visual Studio Code
-- XCode
-- Android Studio
-- Genymotion
-- Expo XDE
-- Expo Client 
-- Nodejs
-- NPM
 - Yarn
 - Python 3.6
 - Pip
