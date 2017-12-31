@@ -74,7 +74,9 @@ yarn start
 - [yarn eject documentation](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject)
 - `yarn eject`
 
-
+## Adding SCSS to Webpack
+- [SCSS](http://sass-lang.com/guide)
+- 
 
 
 ### App development plan
