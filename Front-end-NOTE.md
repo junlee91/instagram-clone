@@ -59,6 +59,23 @@ module.exports = {
 };
 ```
 
+### 12/31/17
+
+## Create React App
+- [GitHub](https://github.com/facebookincubator/create-react-app)
+```sh
+yarn global add create-react-app
+create-react-app frontend
+cd frontend
+yarn start
+```
+
+## Ejecting from Create React App
+- [yarn eject documentation](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject)
+- `yarn eject`
+
+
+
 
 ### App development plan
 - XCode
