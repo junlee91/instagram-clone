@@ -76,7 +76,58 @@ yarn start
 
 ## Adding SCSS to Webpack
 - [SCSS](http://sass-lang.com/guide)
-- 
+
+### 1/1/18 (Happy New Year!)
+
+## Serving Webpack Bundles with Django
+- Django is running on localhost:8000 `python manage.py runserver`
+- ReactApp is running on localhost:3000 `yarn start`
+- 3000 server is also connected to Webpack (This is the place where the front-end development will happen)
+- 3000 server doesn't know the way to connet to Django server (port:8000)
+- 8000 server will automatically block the remote requests from 3000 by default  
+- :8000 <--X-- :3000
+
+### How to allow Django to accept request from the ReactApp?
+
+#### Setting for React
+- Set *Proxy* 
+- `"proxy": "http://localhost:8000"` in package.json 
+- If the rquest not found in ReactApp then translate to find in the proxy
+- example) `localhost:3000/notifications ===> localhost:8000/notifications`
+
+#### Setting for Django
+- `pipenv install django-cors-headers`
+```sh
+THIRD_PARTY_APPS = [
+    ...
+    'corsheaders', # To accept requests from React
+]
+```
+- Allow middleware to accpet the request
+```sh
+MIDDLEWARE = [
+    ...
+    'django.contrib.sessions.middleware.SessionMiddleware',
+==> 'corsheaders.middleware.CorsMiddleware',  
+    'django.middleware.common.CommonMiddleware',
+    ...
+]
+```
+- Set `CORS_ORIGIN_ALLOW_ALL = True` (This is safe because JWT will gurantee to accpet only valid requests)
+
+- Make Django to load the bundles as static files
+```sh
+STATICFILES_DIRS = [
+    ...
+    str(ROOT_DIR.path('frontend', 'build', 'static'))
+]
+```
+- Create view for sodagram and set url for catch-all non-matching url request
+- `url(r'^', views.ReactAppView.as_view())`
+
+### Overall
+- _Users go to 8000 server to view the built app_
+- _Developer go to 3000 server to work and build the app_
 
 
 ### App development plan
