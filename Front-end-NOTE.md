@@ -129,6 +129,14 @@ STATICFILES_DIRS = [
 - _Users go to 8000 server to view the built app_
 - _Developer go to 3000 server to work and build the app_
 
+### 1/2/18
+
+## Redux
+- Components have local state, but apps have global state
+- Sometimes state needs to be shared
+- We need to save the shared state to somewhere
+- Redux = State Container 
+
 
 ### App development plan
 - XCode
