@@ -137,6 +137,23 @@ STATICFILES_DIRS = [
 - We need to save the shared state to somewhere
 - Redux = State Container 
 
+## Redux-thunk
+- `yarn add redux-thunk`
+- Let us send actions to redux store 
+- Send actions when we want 
+
+## Redux Middlewares- Logger
+- `yarn add redux-logger`
+- Only added to middlewares on development mode
+```sh
+const env = process.env.NODE_ENV;
+
+if(env === "development"){
+    const { logger } = require("redux-logger");
+    middlewares.push(logger);
+}
+```
+
 
 ### App development plan
 - XCode
