@@ -142,7 +142,7 @@ STATICFILES_DIRS = [
 - Let us send actions to redux store 
 - Send actions when we want 
 
-## Redux Middlewares- Logger
+## Redux Middlewares-Logger
 - `yarn add redux-logger`
 - Only added to middlewares on development mode
 ```sh
