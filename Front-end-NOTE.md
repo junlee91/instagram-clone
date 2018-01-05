@@ -153,7 +153,27 @@ if(env === "development"){
     middlewares.push(logger);
 }
 ```
+### 1/5/18
 
+## Reactotron
+- [What is Reactotron?](https://github.com/infinitered/reactotron)
+- Installation `brew cask install reactotron`
+
+## Set up
+- `yarn add reactotron-react-js`
+- `yarn add reactotron-redux --dev`
+- Define Reactotron in ReactotronConfig.js and `export default Reactotron`
+- Import into configureStore.js `import Reactotron from "ReactotronConfig";`
+```sh
+let store;
+
+if(env === "development"){
+    store = initialState => Reactotron.createStore(reducer, applyMiddleware(...middlewares)); 
+} else {
+    store = initialState => createStore(reducer, applyMiddleware(...middlewares));
+}
+```
+- Start Reactotron application and we can see actions and dispath actions
 
 ### App development plan
 - XCode
