@@ -6,7 +6,7 @@ import store, {history} from './redux/configureStore';
 import 'index.css';
 import App from './App';
 
-import "ReactotronConfig";
+// import "ReactotronConfig";
 
 console.log(store.getState());
 

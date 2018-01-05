@@ -175,6 +175,9 @@ if(env === "development"){
 ```
 - Start Reactotron application and we can see actions and dispath actions
 
+## Installing Redux Dev Tools
+- `yarn add redux-devtools-extension --dev`
+
 ### App development plan
 - XCode
 - Android Studio
