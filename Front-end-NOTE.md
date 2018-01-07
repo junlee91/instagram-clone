@@ -178,6 +178,16 @@ if(env === "development"){
 ## Installing Redux Dev Tools
 - `yarn add redux-devtools-extension --dev`
 
+
+### 1/5/18
+
+## React Design Patterns
+- Container + Presenter Pattern
+- [React Component Patterns](https://levelup.gitconnected.com/react-component-patterns-ab1f09be2c82)
+
+
+
+
 ### App development plan
 - XCode
 - Android Studio

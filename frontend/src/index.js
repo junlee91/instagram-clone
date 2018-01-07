@@ -22,4 +22,3 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-localStorage.setItem("jwt", "Sodagram");
