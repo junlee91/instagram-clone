@@ -1,0 +1,49 @@
+.auth{
+    max-width: $max-page-width;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.column{
+    width: 40%;
+    &:last-child{
+        width: 35%;
+        margin-left: 35px;
+    }
+
+    .white-box{
+        text-align: center;
+        padding: 15px;
+        @include boxBorder(no);
+        .change-link{
+            color: $light-blue;
+            cursor: pointer;
+        }
+    }
+
+    .app-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 35px;
+
+        .appstores{
+            margin-top: 25px;
+            img{
+                height: 40px; 
+                &:first-child {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    p {
+        margin: 15px;
+    }
+}
