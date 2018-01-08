@@ -1,10 +1,50 @@
 export const translations = {
-  es: {
-    "Log in": "Iniciar Sesión",
-    "About us": "Sobre nosotros"
+  'es': {
+    'Sign up': '',
+    'Log in': '',
+    'Download it on the Apple App Store': '',
+    'Download it on the Google Play': '',
+    'Username': '',
+    'Password': '',
+    'Sign up to see photos and videos from your friends.': '',
+    'Log in with Facebook': '',
+    'Email': '',
+    'Full Name': '',
+    'About us': '',
+    'Support': '',
+    'Blog': '',
+    'Press': '',
+    'API': '',
+    'Jobs': '',
+    'Privacy': '',
+    'Terms': '',
+    'Directory': '',
+    'Language': '',
   },
-  kr: {
-    "Log in": "로그인",
-    "About us": "회사 소개"
-  }
-};
+  'options': {
+  },
+  'kr': {
+    'Sign up': '회원가입',
+    'Log in': '로그인',
+    'Get the app': '지금 다운로드 하세요',
+    'Download it on the Apple App Store': '앱스토어에서 다운로드',
+    'Download it on the Google Play': '구글 플레이에서 다운로드',
+    'Username': '사용자명',
+    'Password': '비밀번호',
+    'Sign up to see photos and videos from your friends.': '',
+    'Log in with Facebook': '페이스북으로 로그인',
+    'Forgot password?': '비밀번호를 잊어버리셨나요?',
+    'Email': '이메일',
+    'Full Name': '이름',
+    'About us': '회사소개',
+    'Support': '지원',
+    'Blog': '블로그',
+    'Press': '언론',
+    'API': '',
+    'Jobs': '채용 정보',
+    'Privacy': '개인정보 처리방침',
+    'Terms': '이용 약관',
+    'Directory': '디렉토리',
+    'Language': '언어',
+  },
+}

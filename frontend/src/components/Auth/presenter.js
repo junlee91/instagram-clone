@@ -39,7 +39,7 @@ const Auth = (props, context) => (
         )}
       </div>
       <div className={styles.appBox}>
-        <span>Get the app</span>
+        <span>{context.t("Get the app")}</span>
         <div className={styles.appstores}>
           <img
             src={require("images/AppStore.png")}

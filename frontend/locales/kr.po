@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Language: kr"
+
+#: src/components/Auth/presenter.js
+msgid "Sign up"
+msgstr "회원가입"
+
+#: src/components/Auth/presenter.js
+msgid "Log in"
+msgstr "로그인"
+
+#: src/components/Auth/presenter.js
+msgid "Get the app"
+msgstr "지금 다운로드 하세요"
+
+#: src/components/Auth/presenter.js
+msgid "Download it on the Apple App Store"
+msgstr "앱스토어에서 다운로드"
+
+#: src/components/Auth/presenter.js
+msgid "Download it on the Google Play"
+msgstr "구글 플레이에서 다운로드"
+
+#: src/components/AuthForms/index.js
+msgid "Username"
+msgstr "사용자명"
+
+#: src/components/AuthForms/index.js
+msgid "Password"
+msgstr "비밀번호"
+
+#: src/components/AuthForms/index.js
+msgid "Sign up to see photos and videos from your friends."
+msgstr ""
+
+#: src/components/AuthForms/index.js
+msgid "Log in with Facebook"
+msgstr "페이스북으로 로그인"
+
+#: src/components/AuthForms/index.js
+msgid "Forgot password?"
+msgstr "비밀번호를 잊어버리셨나요?"
+
+#: src/components/AuthForms/index.js
+msgid "Email"
+msgstr "이메일"
+
+#: src/components/AuthForms/index.js
+msgid "Full Name"
+msgstr "이름"
+
+#: src/components/Footer/index.js
+msgid "About us"
+msgstr "회사소개"
+
+#: src/components/Footer/index.js
+msgid "Support"
+msgstr "지원"
+
+#: src/components/Footer/index.js
+msgid "Blog"
+msgstr "블로그"
+
+#: src/components/Footer/index.js
+msgid "Press"
+msgstr "언론"
+
+#: src/components/Footer/index.js
+msgid "API"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "Jobs"
+msgstr "채용 정보"
+
+#: src/components/Footer/index.js
+msgid "Privacy"
+msgstr "개인정보 처리방침"
+
+#: src/components/Footer/index.js
+msgid "Terms"
+msgstr "이용 약관"
+
+#: src/components/Footer/index.js
+msgid "Directory"
+msgstr "디렉토리"
+
+#: src/components/Footer/index.js
+msgid "Language"
+msgstr "언어"
+

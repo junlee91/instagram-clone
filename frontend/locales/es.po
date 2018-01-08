@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"Language: es"
+
+#: src/components/Auth/presenter.js
+msgid "Sign up"
+msgstr ""
+
+#: src/components/Auth/presenter.js
+msgid "Log in"
+msgstr ""
+
+#: src/components/Auth/presenter.js
+msgid "Download it on the Apple App Store"
+msgstr ""
+
+#: src/components/Auth/presenter.js
+msgid "Download it on the Google Play"
+msgstr ""
+
+#: src/components/AuthForms/index.js
+msgid "Username"
+msgstr ""
+
+#: src/components/AuthForms/index.js
+msgid "Password"
+msgstr ""
+
+#: src/components/AuthForms/index.js
+msgid "Sign up to see photos and videos from your friends."
+msgstr ""
+
+#: src/components/AuthForms/index.js
+msgid "Log in with Facebook"
+msgstr ""
+
+#: src/components/AuthForms/index.js
+msgid "Email"
+msgstr ""
+
+#: src/components/AuthForms/index.js
+msgid "Full Name"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "About us"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "Support"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "Blog"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "Press"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "API"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "Jobs"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "Privacy"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "Terms"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "Directory"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "Language"
+msgstr ""
+
