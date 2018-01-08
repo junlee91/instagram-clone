@@ -57,7 +57,8 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "extract": "i18n_extract"
   },
   "babel": {
     "presets": [

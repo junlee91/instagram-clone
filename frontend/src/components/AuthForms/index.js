@@ -1,14 +1,15 @@
 import React from "react";
 import Ionicon from "react-ionicons";
+import PropTypes from "prop-types";
 import styles from "./styles.scss";
 
-export const LoginForm = props => (
+export const LoginForm = (props, context) => (
   <div className={styles.formComponent}>
     <form className={styles.form}>
-      <input type="text" placeholder="Username" className={styles.textInput} />
+      <input type="text" placeholder={context.t("Username")} className={styles.textInput} />
       <input
         type="password"
-        placeholder="Password"
+        placeholder={context.t("Password")}
         className={styles.textInput}
       />
       <input type="submit" value="Log in" className={styles.button} />
@@ -22,27 +23,33 @@ export const LoginForm = props => (
   </div>
 );
 
-export const SignupForm = props => (
+LoginForm.contextTypes = {
+  t: PropTypes.func.isRequired
+};
+
+export const SignupForm = (props, context) => (
   <div className={styles.formComponent}>
     <h3 className={styles.signupHeader}>
-      Sign up to see photos and videos from your friends.
+    {context.t("Sign up to see photos and videos from your friends.")}
+      
     </h3>
     <button className={styles.button}>
-      <Ionicon icon="logo-facebook" fontSize="20px" color="white" /> Log in with
-      Facebook
+      <Ionicon icon="logo-facebook" fontSize="20px" color="white" /> 
+      
+      {context.t("Log in with Facebook")}
     </button>
     <span className={styles.divider}>or</span>
     <form className={styles.form}>
-      <input type="email" placeholder="Email" className={styles.textInput} />
-      <input type="text" placeholder="Full Name" className={styles.textInput} />
+      <input type="email" placeholder={context.t("Email")} className={styles.textInput} />
+      <input type="text" placeholder={context.t("Full Name")} className={styles.textInput} />
       <input
         type="username"
-        placeholder="Username"
+        placeholder={context.t("Username")}
         className={styles.textInput}
       />
       <input
         type="password"
-        placeholder="Password"
+        placeholder={context.t("Password")}
         className={styles.textInput}
       />
       <input type="submit" value="Sign up" className={styles.button} />
@@ -52,3 +59,7 @@ export const SignupForm = props => (
     </p>
   </div>
 );
+
+SignupForm.contextTypes = {
+  t: PropTypes.func.isRequired
+};
