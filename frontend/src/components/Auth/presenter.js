@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./styles.scss";
+import { LoginForm, SignupForm } from "components/AuthForms";
 
 const Auth = (props, context) => (
   <main className={styles.auth}>
@@ -10,37 +11,27 @@ const Auth = (props, context) => (
       />
     </div>
     <div className={styles.column}>
+      <div className={`${styles.whiteBox} ${styles.formBox}`}>
+        {props.action === "login" && <LoginForm />}
+        {props.action === "signup" && <SignupForm />}
+      </div>
       <div className={styles.whiteBox}>
-        {(() => {
-          switch (props.action) {
-            case "login":
-              return (
-                <p>
-                  Don't have an account?{" "}
-                  <span
-                    onClick={props.changeAction}
-                    className={styles.changeLink}
-                  >
-                    Sign up
-                  </span>
-                </p>
-              );
-            case "signup":
-            return (
-                <p>
-                  Have an account?{" "}
-                  <span
-                    onClick={props.changeAction}
-                    className={styles.changeLink}
-                  >
-                    Log in
-                  </span>
-                </p>
-              );
-            default:
-              null;
-          }
-        })()}
+        {props.action === "login" && (
+          <p>
+            Don't have an account?{" "}
+            <span onClick={props.changeAction} className={styles.changeLink}>
+              Sign up
+            </span>
+          </p>
+        )}
+        {props.action === "signup" && (
+          <p>
+            Have an account?{" "}
+            <span onClick={props.changeAction} className={styles.changeLink}>
+              Log in
+            </span>
+          </p>
+        )}
       </div>
       <div className={styles.appBox}>
         <span>Get the app</span>

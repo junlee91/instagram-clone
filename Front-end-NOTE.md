@@ -179,7 +179,7 @@ if(env === "development"){
 - `yarn add redux-devtools-extension --dev`
 
 
-### 1/5/18
+### 1/7/18
 
 ## React Design Patterns
 - Container + Presenter Pattern

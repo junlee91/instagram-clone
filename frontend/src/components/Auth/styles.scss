@@ -1,49 +1,78 @@
-.auth{
-    max-width: $max-page-width;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100%;
-    margin-top: 30px;
-    width: 100%;
-}
-
-.column{
+.auth {
+  width: 100%;
+  max-width: $max-page-width;
+  margin: 0 auto;
+  display: flex;
+  min-height: 100%;
+  margin-top: 35px;
+  justify-content: center;
+  align-items: center;
+  @include breakpoint("phone") {
+    margin-top: 10px;
+  }
+  .column {
     width: 40%;
-    &:last-child{
-        width: 35%;
-        margin-left: 35px;
+    @include breakpoint("phone") {
+      &:first-child {
+        display: none;
+      }
     }
-
-    .white-box{
-        text-align: center;
-        padding: 15px;
-        @include boxBorder(no);
-        .change-link{
-            color: $light-blue;
-            cursor: pointer;
+    @include breakpoint("tablet") {
+      &:first-child {
+        display: none;
+      }
+    }
+    &:last-child {
+      width: 38%;
+      margin-left: 35px;
+      @include breakpoint("phone") {
+        width: 100%;
+        margin: 0;
+      }
+      @include breakpoint("tablet") {
+        width: 70%;
+        max-width: 350px;
+        margin: 0;
+      }
+    }
+    .app-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 35px;
+      .appstores {
+        margin-top: 25px;
+        img {
+          height: 40px;
+          &:first-child {
+            margin-right: 10px;
+          }
         }
+      }
     }
-
-    .app-box{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 35px;
-
-        .appstores{
-            margin-top: 25px;
-            img{
-                height: 40px; 
-                &:first-child {
-                    margin-right: 10px;
-                }
-            }
-        }
-    }
-
-    p {
+    .white-box {
+      text-align: center;
+      padding: 15px;
+      @include boxBorder(no);
+      @include breakpoint("phone") {
+        background-color: transparent;
+        border: 0;
+      }
+      .change-link {
+        color: $light-blue;
+        cursor: pointer;
+      }
+      .text {
         margin: 15px;
+      }
     }
+    .form-box {
+      margin-bottom: 10px;
+      padding: 0 40px;
+      padding-top: 30px;
+      img {
+        height: 60px;
+      }
+    }
+  }
 }

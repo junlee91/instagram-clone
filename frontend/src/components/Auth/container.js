@@ -17,8 +17,8 @@ class Container extends Component {
       const { action } = prevState;
 
       if (action === "login") {
-        return { 
-            action: "signup" 
+        return {
+          action: "signup"
         };
       } else if (action === "signup") {
         return {
