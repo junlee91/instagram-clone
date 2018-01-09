@@ -25,6 +25,10 @@
     }
     .button {
       @include blueButton();
+      i {
+        margin-right: 5px;
+        font-size: 18px;
+      }
       svg {
         margin-right: 10px;
       }
@@ -58,13 +62,20 @@
       }
     }
     .facebook-link {
-      display: flex;
       align-items: center;
       color: #385185;
       justify-content: center;
       margin-bottom: 25px;
-      svg {
+      border: 0;
+      background-color: white;
+      font-size: $normal-font-size;
+      cursor: pointer;
+      i {
         margin-right: 5px;
+      }
+      &:focus,
+      &:active{
+        outline: none
       }
     }
     .forgot-link {

@@ -5561,6 +5561,10 @@ react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
 
+react-facebook-login@^3.7.2:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/react-facebook-login/-/react-facebook-login-3.7.2.tgz#a67b55c3ba3e72328813e7e75886af352b62b0b5"
+
 react-ionicons@^2.1.6:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/react-ionicons/-/react-ionicons-2.1.6.tgz#c9c472c242f41f228a6261fd6ce156d54e0e7677"
