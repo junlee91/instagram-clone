@@ -16,7 +16,7 @@ urlpatterns = [
     url(
         regex=r'^(?P<user_id>[0-9]+)/unfollow/$',
         view=views.UnFollowUser.as_view(),
-        name='unfollow_user'
+        name='follow_user'
     ),
     url(
         regex=r'^(?P<username>\w+)/followers/$',
@@ -31,7 +31,7 @@ urlpatterns = [
     url(
         regex=r'^search/$',
         view=views.Search.as_view(),
-        name='search'
+        name='user_following'
     ),
     url(
         regex=r'^(?P<username>\w+)/$',
@@ -39,9 +39,9 @@ urlpatterns = [
         name='user_profile'
     ),
     url(
-        regex=r'^(?P<username>\w+)/password$',
+        regex=r'^(?P<username>\w+)/password/$',
         view=views.ChangePassword.as_view(),
-        name='user_password'
+        name='change'
     ),
     url(
         regex=r'^login/facebook/$',

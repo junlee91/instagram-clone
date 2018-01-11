@@ -2,11 +2,12 @@ from rest_framework import serializers
 from . import models
 from sodagram.images import serializers as images_serializers
 
+
 class UserProfileSerializer(serializers.ModelSerializer):
 
     images = images_serializers.CountImageSerializer(many=True, read_only=True)
     post_count = serializers.ReadOnlyField()
-    follwers_count = serializers.ReadOnlyField()
+    followers_count = serializers.ReadOnlyField()
     following_count = serializers.ReadOnlyField()
 
     class Meta:
@@ -18,10 +19,11 @@ class UserProfileSerializer(serializers.ModelSerializer):
             'bio',
             'website',
             'post_count',
-            'follwers_count',
+            'followers_count',
             'following_count',
             'images'
         )
+
 
 class ListUserSerializer(serializers.ModelSerializer):
 

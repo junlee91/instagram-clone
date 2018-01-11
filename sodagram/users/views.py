@@ -1,13 +1,11 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from . import models, serializers
 from rest_framework import status
+from . import models, serializers
 from sodagram.notifications import views as notification_views
 from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
 from rest_auth.registration.views import SocialLoginView
 
-class FacebookLogin(SocialLoginView):
-    adapter_class = FacebookOAuth2Adapter
 
 class ExploreUsers(APIView):
 
@@ -17,10 +15,10 @@ class ExploreUsers(APIView):
 
         serializer = serializers.ListUserSerializer(last_five, many=True)
 
-        return Response(data=serializer.data, status=status.HTTP_200_OK) 
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
 
 
-class FollowUser(APIView): 
+class FollowUser(APIView):
 
     def post(self, request, user_id, format=None):
 
@@ -28,7 +26,6 @@ class FollowUser(APIView):
 
         try:
             user_to_follow = models.User.objects.get(id=user_id)
-        
         except models.User.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
@@ -40,6 +37,7 @@ class FollowUser(APIView):
 
         return Response(status=status.HTTP_200_OK)
 
+
 class UnFollowUser(APIView):
 
     def post(self, request, user_id, format=None):
@@ -48,7 +46,6 @@ class UnFollowUser(APIView):
 
         try:
             user_to_follow = models.User.objects.get(id=user_id)
-        
         except models.User.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
@@ -56,7 +53,7 @@ class UnFollowUser(APIView):
 
         user.save()
 
-        return Response(status=status.HTTP_200_OK) 
+        return Response(status=status.HTTP_200_OK)
 
 
 class UserProfile(APIView):
@@ -66,7 +63,6 @@ class UserProfile(APIView):
         try:
             found_user = models.User.objects.get(username=username)
             return found_user
-
         except models.User.DoesNotExist:
             return None
 
@@ -75,12 +71,12 @@ class UserProfile(APIView):
         found_user = self.get_user(username)
 
         if found_user is None:
+
             return Response(status=status.HTTP_404_NOT_FOUND)
 
         serializer = serializers.UserProfileSerializer(found_user)
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
-
 
     def put(self, request, username, format=None):
 
@@ -89,25 +85,27 @@ class UserProfile(APIView):
         found_user = self.get_user(username)
 
         if found_user is None:
+
             return Response(status=status.HTTP_404_NOT_FOUND)
 
         elif found_user.username != user.username:
+
             return Response(status=status.HTTP_401_UNAUTHORIZED)
 
         else:
 
-            serializer = serializers.UserProfileSerializer(found_user, data=request.data, partial=True)
+            serializer = serializers.UserProfileSerializer(
+                found_user, data=request.data, partial=True)
 
             if serializer.is_valid():
-                
+
                 serializer.save()
 
                 return Response(data=serializer.data, status=status.HTTP_200_OK)
 
             else:
+
                 return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
 
 
 class UserFollowers(APIView):
@@ -121,9 +119,11 @@ class UserFollowers(APIView):
 
         user_followers = found_user.followers.all()
 
-        serializer = serializers.ListUserSerializer(user_followers, many=True)
+        serializer = serializers.ListUserSerializer(
+            user_followers, many=True)
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
+
 
 class UserFollowing(APIView):
 
@@ -136,9 +136,11 @@ class UserFollowing(APIView):
 
         user_following = found_user.following.all()
 
-        serializer = serializers.ListUserSerializer(user_following, many=True)
+        serializer = serializers.ListUserSerializer(
+            user_following, many=True)
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
+
 
 class Search(APIView):
 
@@ -153,9 +155,11 @@ class Search(APIView):
             serializer = serializers.ListUserSerializer(users, many=True)
 
             return Response(data=serializer.data, status=status.HTTP_200_OK)
-    
+
         else:
+
             return Response(status=status.HTTP_400_BAD_REQUEST)
+
 
 class ChangePassword(APIView):
 
@@ -169,9 +173,9 @@ class ChangePassword(APIView):
 
             if current_password is not None:
 
-                password_match = user.check_password(current_password)
+                passwords_match = user.check_password(current_password)
 
-                if password_match:
+                if passwords_match:
 
                     new_password = request.data.get('new_password', None)
 
@@ -182,13 +186,23 @@ class ChangePassword(APIView):
                         user.save()
 
                         return Response(status=status.HTTP_200_OK)
+
                     else:
+
                         return Response(status=status.HTTP_400_BAD_REQUEST)
+
                 else:
-                    return Response(status=status.HTTP_400_BAD_REQUEST)  
+
+                    return Response(status=status.HTTP_400_BAD_REQUEST)
+
             else:
+
                 return Response(status=status.HTTP_400_BAD_REQUEST)
+
         else:
+
             return Response(status=status.HTTP_401_UNAUTHORIZED)
 
-            
+
+class FacebookLogin(SocialLoginView):
+    adapter_class = FacebookOAuth2Adapter

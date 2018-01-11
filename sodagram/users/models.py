@@ -10,7 +10,7 @@ class User(AbstractUser):
 
     """ User Model """
 
-    GENDER_CHOICE = (
+    GENDER_CHOICES = (
         ('male', 'Male'),
         ('female', 'Female'),
         ('not-specified', 'Not specified')
@@ -23,7 +23,7 @@ class User(AbstractUser):
     website = models.URLField(null=True)
     bio = models.TextField(null=True)
     phone = models.CharField(max_length=140, null=True)
-    gender = models.CharField(max_length=80, choices=GENDER_CHOICE, null=True)
+    gender = models.CharField(max_length=80, choices=GENDER_CHOICES, null=True)
     followers = models.ManyToManyField("self", blank=True)
     following = models.ManyToManyField("self", blank=True)
 
@@ -35,7 +35,7 @@ class User(AbstractUser):
         return self.images.all().count()
 
     @property
-    def follwers_count(self):
+    def followers_count(self):
         return self.followers.all().count()
 
     @property
