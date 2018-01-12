@@ -1,9 +1,10 @@
-.feed{
+.feed {
     min-height: 500px;
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: $max-page-width;
     margin: 0 auto;
+    margin-top: 50px;
     align-items: center;
-}
+  }
