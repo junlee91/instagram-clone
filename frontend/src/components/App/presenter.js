@@ -10,7 +10,7 @@ import Feed from "components/Feed";
 const App = props => [
   // Navigation
   // Routes
-  props.isLoggedIn ? <Navigation key={1}/> : null,
+  props.isLoggedIn ? <Navigation key={1} /> : null,
   props.isLoggedIn ? <PrivateRoutes key={2} /> : <PublicRoutes key={2} />,
   <Footer key={3} />
 ];
