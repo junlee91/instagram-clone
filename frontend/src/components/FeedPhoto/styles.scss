@@ -33,6 +33,11 @@
       }
     }
   }
+  .content{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
   .meta {
     padding: 15px;
     padding-bottom: 0;
