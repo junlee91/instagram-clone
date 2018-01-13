@@ -3,7 +3,7 @@ $desktop-width: 875px;
 $xl-desktop-width: 1351px;
 $phone-width: 320px;
 $iphone6-width: 375px;
-$iphone6plus-width: 450px;
+$iphone6plus-width: 550px;
 
 @mixin breakpoint($breakpoint) {
   @if $breakpoint == "tablet" {
@@ -41,7 +41,7 @@ $iphone6plus-width: 450px;
   border: 1px solid #e6e6e6;
   background-color: white;
   @if $radius == yes {
-    border-radius: 5px;
+    border-radius: 3px;
   }
 }
 
@@ -52,10 +52,10 @@ $iphone6plus-width: 450px;
   color: white;
   font-weight: 600;
   border: 0;
-  width: 100%;
   font-size: $normal-font-size;
   line-height: 26px;
   cursor: pointer;
+  width: 100%;
   &:focus,
   &:active {
     outline: none;

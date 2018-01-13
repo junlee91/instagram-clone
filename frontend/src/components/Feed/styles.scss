@@ -1,10 +1,10 @@
 .feed {
-    min-height: 500px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: $max-page-width;
-    margin: 0 auto;
-    margin-top: 50px;
-    align-items: center;
-  }
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: $max-page-width;
+  margin: 0 auto;
+  align-items: center;
+  margin-top: 50px;
+}
