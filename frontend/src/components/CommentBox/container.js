@@ -37,6 +37,10 @@ class Container extends Component {
     if (key === "Enter") {
       event.preventDefault();
       submitComment(comment);
+
+      this.setState({
+        comment: ""
+      });
     }
   };
 }
