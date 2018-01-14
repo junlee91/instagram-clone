@@ -9,8 +9,8 @@ const CommentBox = (props, context) => (
       className={styles.input}
       placeholder={context.t("Add a comment...")}
       value={props.comment}
-      onChange={props.handleInputChange}
       onKeyPress={props.handleKeyPress}
+      onChange={props.handleInputChange}
     />
   </form>
 );
@@ -23,6 +23,7 @@ CommentBox.propTypes = {
   handleKeyPress: PropTypes.func.isRequired,
   handleInputChange: PropTypes.func.isRequired,
   comment: PropTypes.string.isRequired,
+  photoId: PropTypes.number.isRequired
 };
 
 export default CommentBox;

@@ -55,19 +55,17 @@ function likePhoto(photoId) {
     dispatch(doLikePhoto(photoId)); //Optimistic update when user clicks like button
     const { user: { token } } = getState();
     fetch(`/images/${photoId}/likes/`, {
-      mathod: "POST",
+      method: "POST",
       headers: {
         Authorization: `JWT ${token}`
       }
-    })
-    .then(response => {
-      if( response.status === 401 ){
+    }).then(response => {
+      if (response.status === 401) {
         dispatch(userActions.logout());
-      }
-      else if( !response.ok ){
+      } else if (!response.ok) {
         dispatch(doUnlikePhoto(photoId));
       }
-    })
+    });
   };
 }
 
@@ -75,20 +73,39 @@ function unlikePhoto(photoId) {
   return (dispatch, getState) => {
     dispatch(doUnlikePhoto(photoId)); //Optimistic update when user clicks like button
     const { user: { token } } = getState();
-    fetch(`/images/${photoId}/unlikes`, { // error with unlikes/
-      mathod: "DELETE",
+    fetch(`/images/${photoId}/unlikes/`, {
+      // error with unlikes/
+      method: "DELETE",
       headers: {
         Authorization: `JWT ${token}`
       }
-    })
-    .then(response => {
-      if( response.status === 401 ){
+    }).then(response => {
+      if (response.status === 401) {
         dispatch(userActions.logout());
-      }
-      else if( !response.ok ){
+      } else if (!response.ok) {
         dispatch(doLikePhoto(photoId));
       }
-    })
+    });
+  };
+}
+
+function commentPhoto(photoId, message) {
+  return (dispatch, getState) => {
+    const { user: { token } } = getState();
+    fetch(`/images/${photoId}/comments/`, {
+      method: "POST",
+      headers: {
+        Authorization: `JWT ${token}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message
+      })
+    }).then(response => {
+      if (response.status === 401) {
+        dispatch(userActions.logout());
+      } 
+    });
   };
 }
 
@@ -153,7 +170,8 @@ function applyUnlikePhoto(state, action) {
 const actionCreators = {
   getFeed,
   likePhoto,
-  unlikePhoto
+  unlikePhoto,
+  commentPhoto
 };
 
 export { actionCreators };
