@@ -21,9 +21,7 @@ const FeedPhoto = (props, context) => {
           <span className={styles.location}>{props.location}</span>
         </div>
       </header>
-      <div className={styles.content}>
-        <img src={props.file} alt={props.caption} />
-      </div>
+      <img src={props.file} alt={props.caption} />
       <div className={styles.meta}>
         <PhotoActions
           number={props.like_count}
@@ -37,10 +35,13 @@ const FeedPhoto = (props, context) => {
           comments={props.comments}
         />
         <TimeStamp time={props.natural_time} />
-        <CommentBox photoId={props.id}/>
+        <CommentBox photoId={props.id} />
       </div>
       {props.seeingLikes && (
-        <UserList title={context.t("Likes")} closeLikes={props.closeLikes} />
+        <UserList
+          title={context.t("Likes")}
+          closeLikes={props.closeLikes}
+        />
       )}
     </div>
   );
@@ -51,6 +52,7 @@ FeedPhoto.contextTypes = {
 };
 
 FeedPhoto.propTypes = {
+  id: PropTypes.number.isRequired,
   creator: PropTypes.shape({
     profile_image: PropTypes.string,
     username: PropTypes.string.isRequired
@@ -61,6 +63,7 @@ FeedPhoto.propTypes = {
   caption: PropTypes.string.isRequired,
   comments: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.number.isRequired,
       message: PropTypes.string.isRequired,
       creator: PropTypes.shape({
         profile_image: PropTypes.string,
@@ -71,8 +74,8 @@ FeedPhoto.propTypes = {
   natural_time: PropTypes.string.isRequired,
   is_liked: PropTypes.bool.isRequired,
   seeingLikes: PropTypes.bool.isRequired,
+  openLikes: PropTypes.func.isRequired,
   closeLikes: PropTypes.func.isRequired,
-  openLikes: PropTypes.func.isRequired
 };
 
 export default FeedPhoto;
