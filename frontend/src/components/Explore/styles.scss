@@ -1,0 +1,13 @@
+.explore {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: $max-card-width;
+  margin: 0 auto;
+  align-items: center;
+  margin-top: 50px;
+  @include boxBorder(yes);
+  @include breakpoint("phone") {
+    background-color: transparent;
+  }
+}
