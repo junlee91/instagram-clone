@@ -8,13 +8,15 @@ const SET_USER_LIST = "SET_USER_LIST";
 const FOLLOW_USER = "FOLLOW_USER";
 const UNFOLLOW_USER = "UNFOLLOW_USER";
 const SET_IMAGE_LIST = "SET_IMAGE_LIST";
+const SET_USER_PROFILE = "SET_USER_PROFILE";
 
 // action creators
 
-function saveToken(token) {
+function saveToken(token, username) {
   return {
     type: SAVE_TOKEN,
-    token
+    token,
+    username
   };
 }
 
@@ -52,6 +54,13 @@ function setImageList(imageList) {
   };
 }
 
+function setUserProfile(profileList) {
+  return {
+    type: SET_USER_PROFILE,
+    profileList
+  };
+}
+
 // API actions
 
 function facebookLogin(access_token) {
@@ -68,7 +77,7 @@ function facebookLogin(access_token) {
       .then(response => response.json())
       .then(json => {
         if (json.token) {
-          dispatch(saveToken(json.token));
+          dispatch(saveToken(json.token, json.user.username));
         }
       })
       .catch(err => console.log(err));
@@ -90,7 +99,7 @@ function usernameLogin(username, password) {
       .then(response => response.json())
       .then(json => {
         if (json.token) {
-          dispatch(saveToken(json.token));
+          dispatch(saveToken(json.token, json.user.username));
         }
       })
       .catch(err => console.log(err));
@@ -115,7 +124,7 @@ function createAccount(username, password, email, name) {
       .then(response => response.json())
       .then(json => {
         if (json.token) {
-          dispatch(saveToken(json.token));
+          dispatch(saveToken(json.token, json.user.username));
         }
       });
   };
@@ -247,11 +256,32 @@ function searchImages(token, searchTerm) {
     .then(json => json);
 }
 
+function getUserProfile() {
+  return (dispatch, getState) => {
+    const { user: { token, username } } = getState();
+    fetch(`/users/${username}/`, {
+      method: "GET",
+      headers: {
+        Authorization: `JWT ${token}`,
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        if (response.status === 401) {
+          dispatch(logout());
+        }
+        return response.json();
+      })
+      .then(json => dispatch(setUserProfile(json)));
+  };
+}
+
 // initial state
 
 const initialState = {
   isLoggedIn: localStorage.getItem("jwt") ? true : false,
-  token: localStorage.getItem("jwt")
+  token: localStorage.getItem("jwt"),
+  username: localStorage.getItem("username")
 };
 
 // reducer
@@ -270,6 +300,8 @@ function reducer(state = initialState, action) {
       return applyUnfollowUser(state, action);
     case SET_IMAGE_LIST:
       return applySetImageList(state, action);
+    case SET_USER_PROFILE:
+      return applySetProfileList(state, action);
     default:
       return state;
   }
@@ -278,12 +310,14 @@ function reducer(state = initialState, action) {
 // reducer functions
 
 function applySetToken(state, action) {
-  const { token } = action;
+  const { token, username } = action;
   localStorage.setItem("jwt", token);
+  localStorage.setItem("username", username);
   return {
     ...state,
     isLoggedIn: true,
-    token
+    token,
+    username
   };
 }
 
@@ -338,6 +372,15 @@ function applySetImageList(state, action) {
   };
 }
 
+function applySetProfileList(state, action) {
+  const { profileList } = action;
+  //console.log(profileList);
+  return {
+    ...state,
+    profileList
+  };
+}
+
 // exports
 
 const actionCreators = {
@@ -349,7 +392,8 @@ const actionCreators = {
   followUser,
   unfollowUser,
   getExplore,
-  searchByTerm
+  searchByTerm,
+  getUserProfile
 };
 
 export { actionCreators };
