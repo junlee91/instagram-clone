@@ -20,6 +20,7 @@ class Container extends Component {
       });
     }
   }
+
   componentWillReceiveProps = nextProps => {
     if (nextProps.feed) {
       this.setState({

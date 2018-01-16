@@ -21,7 +21,9 @@ const FeedPhoto = (props, context) => {
           <span className={styles.location}>{props.location}</span>
         </div>
       </header>
-      <img src={props.file} alt={props.caption} />
+      <div className={styles.photos}>
+        <img src={props.file} alt={props.caption} />
+      </div>
       <div className={styles.meta}>
         <PhotoActions
           number={props.like_count}
@@ -38,10 +40,7 @@ const FeedPhoto = (props, context) => {
         <CommentBox photoId={props.id} />
       </div>
       {props.seeingLikes && (
-        <UserList
-          title={context.t("Likes")}
-          closeLikes={props.closeLikes}
-        />
+        <UserList title={context.t("Likes")} closeLikes={props.closeLikes} />
       )}
     </div>
   );
@@ -75,7 +74,7 @@ FeedPhoto.propTypes = {
   is_liked: PropTypes.bool.isRequired,
   seeingLikes: PropTypes.bool.isRequired,
   openLikes: PropTypes.func.isRequired,
-  closeLikes: PropTypes.func.isRequired,
+  closeLikes: PropTypes.func.isRequired
 };
 
 export default FeedPhoto;
