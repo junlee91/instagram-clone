@@ -337,3 +337,7 @@ SOCIALACCOUNT_PROVIDERS = {
 REST_AUTH_REGISTER_SERIALIZERS = {
     'REGISTER_SERIALIZER': 'sodagram.users.serializers.SignUpSerializer'
 }
+
+REST_AUTH_SERIALIZERS = {
+    'USER_DETAILS_SERIALIZER': 'sodagram.users.serializers.UserProfileSerializer'
+}
