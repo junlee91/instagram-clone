@@ -183,7 +183,7 @@ class Search(APIView):
 
             images = models.Image.objects.filter(tags__name__in=hashtags).distinct()
 
-            serializer = serializers.CountImageSerializer(images, many=True)
+            serializer = serializers.CountImageSerializer(images, many=True, context={'request' : request})
 
             return Response(data=serializer.data, status=status.HTTP_200_OK)
         
@@ -191,7 +191,7 @@ class Search(APIView):
 
             images = models.Image.objects.all()[:20]
 
-            serializer = serializers.CountImageSerializer(images, many=True)
+            serializer = serializers.CountImageSerializer(images, many=True, context={'request' : request})
 
             return Response(data=serializer.data, status=status.HTTP_200_OK)
 
@@ -245,7 +245,7 @@ class ImageDetail(APIView):
         if image is None:
             return Response(status=status.HTTP_400_BAD_REQUEST) 
 
-        serializer = serializers.InputImageSerializer(image, data=request.data, partial=True)
+        serializer = serializers.InputImageSerializer(image, data=request.data, partial=True, context={'request' : request})
 
         if serializer.is_valid():
 
