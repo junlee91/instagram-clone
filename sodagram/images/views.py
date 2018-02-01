@@ -69,11 +69,10 @@ class LikeImage(APIView):
 
         users = user_models.User.objects.filter(id__in=like_creators_ids)
 
-        serializer = user_serializers.ListUserSerializer(users, many=True, context={"request": request})
+        serializer = user_serializers.ListUserSerializer(
+            users, many=True, context={'request': request})
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
-
-
 
     def post(self, request, image_id, format=None):
 
@@ -85,11 +84,10 @@ class LikeImage(APIView):
             return Response(status=status.HTTP_404_NOT_FOUND)
 
         try:
-            preexisting_like = models.Like.objects.get(
+            preexisiting_like = models.Like.objects.get(
                 creator=user,
                 image=found_image
             )
-
             return Response(status=status.HTTP_304_NOT_MODIFIED)
 
         except models.Like.DoesNotExist:
@@ -101,9 +99,10 @@ class LikeImage(APIView):
 
             new_like.save()
 
-            notification_views.create_notification(user, found_image.creator, 'like', found_image)
+            notification_views.create_notification(
+                user, found_image.creator, 'like', found_image)
 
-        return Response(status=status.HTTP_201_CREATED)
+            return Response(status=status.HTTP_201_CREATED)
 
 
 class UnLikeImage(APIView):
@@ -113,17 +112,11 @@ class UnLikeImage(APIView):
         user = request.user
 
         try:
-            found_image = models.Image.objects.get(id=image_id)
-        except models.Image.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
-
-        try:
-            preexisting_like = models.Like.objects.get(
+            preexisiting_like = models.Like.objects.get(
                 creator=user,
-                image=found_image
+                image__id=image_id
             )
-
-            preexisting_like.delete()
+            preexisiting_like.delete()
 
             return Response(status=status.HTTP_204_NO_CONTENT)
 
