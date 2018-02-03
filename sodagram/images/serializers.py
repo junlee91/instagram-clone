@@ -30,8 +30,14 @@ class FeedUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = user_model.User
         fields = (
+            'profile_image',
             'username',
-            'profile_image'
+            'name',
+            'bio',
+            'website',
+            'post_count',
+            'followers_count',
+            'following_count',
         )
 
 
