@@ -56,17 +56,24 @@ class CommentSerializer(serializers.ModelSerializer):
 
 class LikeSerializer(serializers.ModelSerializer):
 
-    #image = ImageSerializer()
+    creator = FeedUserSerializer()
 
     class Meta:
         model = models.Like
-        fields = '__all__'
+        fields = (
+            'created_at',
+            'updated_at',
+            'creator',
+            'id',
+            'image'
+        )
 
 
 
 class ImageSerializer(TaggitSerializer, serializers.ModelSerializer):
 
     comments = CommentSerializer(many=True)
+    likes = LikeSerializer(many=True)
     creator = FeedUserSerializer()
     tags = TagListSerializerField()
     is_liked = serializers.SerializerMethodField()
@@ -80,6 +87,7 @@ class ImageSerializer(TaggitSerializer, serializers.ModelSerializer):
             'caption',
             'comments',
             'like_count',
+            'likes',
             'creator',
             'tags',
             'natural_time',
