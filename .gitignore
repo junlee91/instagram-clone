@@ -306,3 +306,8 @@ pip-selfcheck.json
 sodagram/media/
 
 
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
