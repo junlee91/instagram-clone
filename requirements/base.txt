@@ -48,7 +48,7 @@ redis>=2.10.5
 
 
 # Your custom requirements go here
-djangorestframework==3.7.7
+djangorestframework==3.11.2
 djangorestframework-jwt==1.11.0
 django-cors-headers==2.1.0
 django-rest-auth==0.9.3
